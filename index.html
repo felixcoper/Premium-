@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- 🔥 X / Twitter Video Preview -->
+<meta property="og:type" content="video.other">
+<meta property="og:title" content="Watch Before It’s Gone 👀">
+<meta property="og:description" content="Tap to watch full clip">
+<meta property="og:image" content="https://files.catbox.moe/ngp4va.mp4">
+<meta property="og:video" content="https://files.catbox.moe/ngp4va.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="720">
+
+<title>Loading Video...</title>
+
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  font-family: Arial, sans-serif;
+  color: #fff;
+}
+
+/* Video container */
+.video-wrap {
+  position: relative;
+  width: 100%;
+  max-height: 70vh;
+  background: #000;
+}
+
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fake play overlay (like X) */
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.play-overlay span {
+  width: 70px;
+  height: 70px;
+  background: rgba(0,0,0,0.6);
+  border-radius: 50%;
+  position: relative;
+}
+
+.play-overlay span:after {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 20px;
+  border-style: solid;
+  border-width: 15px 0 15px 25px;
+  border-color: transparent transparent transparent #fff;
+}
+
+/* Ad area below video */
+.ad-area {
+  min-height: 30vh;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sticky mobile banner */
+.sticky-ad {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #000;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎥 VIDEO -->
+<div class="video-wrap" id="videoWrap">
+  <video id="video" playsinline muted autoplay loop poster="https://files.catbox.moe/ngp4va.mp4">
+    <source src="https://files.catbox.moe/ngp4va.mp4" type="video/mp4">
+  </video>
+  <div class="play-overlay"><span></span></div>
+</div>
+
+<!-- 📢 AD CONTENT AREA (green area like example) -->
+<div class="ad-area">
+  <!-- In-page banner / native -->
+  <!-- PASTE YOUR AD CODE HERE -->
+</div>
+
+<!-- 📌 STICKY MOBILE BANNER -->
+<div class="sticky-ad">
+  <!-- PASTE STICKY AD CODE HERE -->
+</div>
+
+<!-- 🚀 POPUNDER (fires on first tap) -->
+<script>
+let popTriggered = false;
+document.addEventListener("click", function () {
+  if (popTriggered) return;
+  popTriggered = true;
+
+  // PASTE POPUNDER SCRIPT OR DIRECT LINK CODE HERE
+});
+</script>
+
+<!-- 🔥 Force play on first interaction (mobile fix) -->
+<script>
+const video = document.getElementById("video");
+document.body.addEventListener("touchstart", () => {
+  video.muted = false;
+  video.play();
+}, { once: true });
+</script>
+
+</body>
+</html>
